@@ -32,11 +32,14 @@ namespace TP2
             #region Q3
             Console.WriteLine("Question 3");
             // Afficher les plaques d'immatriculation de toutes les voitures (une seule fois par voiture) liées à au moins un utilisateur.
-
+            var q3 = FakeDb.Instance.Users.SelectMany(x => x.Cars).Select(x => x.Registration);
+            Console.WriteLine("Réponse question 3\n\tPlaques d'immatriculations des voitures liées à au moins un utilisateur : " + q3);
             #endregion
             #region Q4
             Console.WriteLine("Question 4");
             // Afficher la ou les voiture(s) avec le plus de kilomètre
+            var q4 = FakeDb.Instance.Cars.Max(x => x.Mileage);
+            Console.WriteLine("Réponse question 4\n\tVoitures ayant le plus de kilomètres : " + q4);
 
             #endregion
             #region Q5
